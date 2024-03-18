@@ -1,0 +1,96 @@
+body{
+    font-size: 10px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(star.jpg);
+    background-size: cover;
+    overflow:hidden;
+}
+.contanier{
+    font-size: 10px;
+    width: 40em;
+    height: 40em;
+    position: relative;
+             
+}
+.sun{
+    position: absolute;
+    top: 15em;
+    left: 10em;
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    background-image: url(sun3.jpeg);
+    background-size: cover;
+}
+.earth .moon{
+    position: absolute;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: aliceblue transparent;
+}
+.earth {
+    position: absolute;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: aliceblue transparent;
+}
+.earth{
+    top: 5em;
+    left: 5em;
+    width: 30em;
+    height: 30em;
+    animation: orbit 36s linear infinite;
+}
+.moon{
+    top: 0;
+    right:0;
+    width: 8em;
+    height: 8em;
+    animation: orbit 15s linear infinite;
+}
+.earth::before , .moon::before{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+
+}
+.moon::before{
+    top: 0;
+    right: 0.2em;
+    width: 1.3em;
+    height: 1.3em;
+    background-image: url(moon.jpeg);
+    background-size: cover;
+}
+.earth::before{
+    top: 2.8em;
+    right: 2.8em;
+    width: 3em;
+    height: 3em;
+    background-image: url(earth.jpeg);
+    background-size: cover;
+    -webkit-animation: spin 7s linear infinite;
+    -moz-animation: spin 7s linear infinite;
+    animation: spin 7s linear infinite;
+}
+
+
+@-moz-keyframes spin{
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes spin{
+    100%{
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes orbit{
+    to{transform: rotate(360deg);}
+}
